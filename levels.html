@@ -449,6 +449,9 @@ function touchStartHandler(i, j, elem) {
         document.addEventListener("touchend", function() {
             document.removeEventListener("touchmove", handler);
         })
+        document.addEventListener("touchcancel", function() {
+            document.removeEventListener("touchmove", handler);
+        })
     }
 }
 
