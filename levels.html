@@ -386,6 +386,8 @@ function handleMove(i, j, elem, startX, startY) {
         // console.log(event)
         dx = event.clientX - startX; 
         dy = event.clientY - startY; 
+        startX = event.clientX
+        startY = event.clientY
         var delta = 0.002;
         newx = parseFloat(x)+delta*dx;
         document.getElementById(elem).textContent = newx.toFixed(digits);
@@ -408,6 +410,8 @@ function handleTouchMove(i, j, elem, startX, startY) {
         // console.log(event) 
         dx = event.touches[0].clientX - startX; 
         dy = event.touches[0].clientY - startY 
+        startX = event.touches[0].clientX
+        startY = event.touches[0].clientY
         var delta = 0.002;
         newx = parseFloat(x)+delta*dx;
         document.getElementById(elem).textContent = newx.toFixed(digits);
