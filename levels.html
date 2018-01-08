@@ -378,14 +378,14 @@ function displayEigenvalues(canvasId, e) {
 }
 
 // Handle dragging of matrix element
-function handleMove(i, j, elem) {
+function handleMove(i, j, elem, startX, startY) {
     return function(event) {
         var docElem = document.getElementById(elem) ;
         var x = docElem.textContent || docElem.innerText;
         var rect = docElem.getBoundingClientRect();
         // console.log(event)
-        dx = event.clientX - (rect.right + rect.left)/2;
-        dy = event.clientY - (rect.top + rect.bottom)/2;
+        dx = event.clientX - startX; 
+        dy = event.clientY - startY; 
         var delta = 0.002;
         newx = parseFloat(x)+delta*dx;
         document.getElementById(elem).textContent = newx.toFixed(digits);
@@ -401,14 +401,13 @@ function handleMove(i, j, elem) {
         displayEigenvalues("myCanvas", e);
     }
 }
-function handleTouchMove(i, j, elem) {
+function handleTouchMove(i, j, elem, startX, startY) {
     return function(event) {
         var docElem = document.getElementById(elem)
         var x = docElem.textContent || docElem.innerText;
-        var rect = docElem.getBoundingClientRect();
-        // console.log(event) rect.top, rect.right, rect.bottom, rect.left
-        dx = event.touches[0].clientX - (rect.right + rect.left)/2;
-        dy = event.touches[0].clientY - (rect.top + rect.bottom)/2;
+        // console.log(event) 
+        dx = event.touches[0].clientX - startX; 
+        dy = event.touches[0].clientY - startY 
         var delta = 0.002;
         newx = parseFloat(x)+delta*dx;
         document.getElementById(elem).textContent = newx.toFixed(digits);
@@ -429,7 +428,7 @@ function handleTouchMove(i, j, elem) {
 function handleDown(i, j, elem) {
     return function(event) {
         // console.log(elem);
-        handler = handleMove(i, j, elem);
+        handler = handleMove(i, j, elem, event.clientX,event.clientY);
         document.addEventListener("mousemove", handler);
 
         document.addEventListener("mouseup", function() {
@@ -440,7 +439,7 @@ function handleDown(i, j, elem) {
 function touchStartHandler(i, j, elem) {
     return function(event) {
         // console.log(elem);
-        handler = handleTouchMove(i, j, elem);
+        handler = handleTouchMove(i, j, elem, event.touches[0].clientX,event.touches[0].clientY);
         document.addEventListener("touchmove", handler);
 
         document.addEventListener("touchend", function() {
