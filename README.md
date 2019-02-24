@@ -1,2 +1,2 @@
-# dpiponi.github.io
-Extending the matrix eigenvalues example to mobile devices: iOS, Android and touch screens
+# giulohome.github.io
+My static host, even for React SPA!
