@@ -15,7 +15,7 @@
  				document.getElementById("idButton").onclick=async ()=>{ 
  				
  				var myUrl = document.getElementById("myUrl").value;
- 				myUrl = myUrl.split("?")[0] + "amp/";
+ 				myUrl = "https://thingproxy.freeboard.io/" + myUrl.split("?")[0].replace("/amp/","/") + "amp/";
   console.log(myUrl);
  ; 
  var x = await fetch(myUrl);
