@@ -19,12 +19,8 @@
   console.log(myUrl);
  ; 
 
- var opts = {
-  headers: {
-    'mode':'cors'
-  }
- }
- var x = await fetch(myUrl, opts);
+
+ var x = await fetch(myUrl);
  var html = await x.text(); 
   //console.log(html);
   
