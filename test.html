@@ -21,7 +21,7 @@
  ; 
 
 
- var x = await fetch(myUrl);
+ var x = await fetch(myUrl , { headers: { 'mode':'cors' } });
  var html = await x.text(); 
   //console.log(html);
   
