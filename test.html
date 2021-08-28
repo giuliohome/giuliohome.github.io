@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+				<head>
+								<meta name="viewport" content="width=device-width, initial-scale=1">
+				</head>
+<body>
+
+  <input type="text" id="myUrl" name="myUrl" autocomplete="off"><br><br>
+
+<button type="button" id="idButton"" onclick="myFunction()">Show Me!</button>
+<br>
+
+ 
+ <script>
+ 				document.getElementById("idButton").onclick=async ()=>{ 
+ 				
+ 				var myUrl = document.getElementById("myUrl").value;
+ 				myUrl = myUrl.split("?")[0] + "amp/";
+  console.log(myUrl);
+ ; 
+ var x = await fetch(myUrl);
+ var html = await x.text(); 
+  //console.log(html);
+  
+  document.write(html);
+  console.log("document written ");
+ 
+  
+  console.log('DOM is ready.');
+  document.querySelector("[subscriptions-section='content']").removeAttribute("subscriptions-section");
+   
+ 				
+ 				};
+function  myFunction() {
+  
+  }
+</script>
+ 
+ 
+</body>
+</html>
