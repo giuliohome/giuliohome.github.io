@@ -18,7 +18,13 @@
  				myUrl = "https://thingproxy.freeboard.io/" + myUrl.split("?")[0].replace("/amp/","/") + "amp/";
   console.log(myUrl);
  ; 
- var x = await fetch(myUrl);
+
+var opts = {
+  headers: {
+    'mode':'cors'
+  }
+}
+ var x = await fetch(myUrl, opts);
  var html = await x.text(); 
   //console.log(html);
   
