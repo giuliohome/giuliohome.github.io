@@ -16,6 +16,12 @@
  				
  				var myUrl = document.getElementById("myUrl").value;
  				myUrl = myUrl.split("?")[0].replace("/amp/","/") + "amp/";
+
+   window.location.href = 
+      "https://royal-bread-003a.cinemageddon2009.workers.dev/" 
+      + myUrl;
+   return;
+
    myUrl = "https://api.codetabs.com/v1/proxy?quest=" + myUrl;
    console.log(myUrl);
  ; 
