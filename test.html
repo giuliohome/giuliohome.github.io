@@ -7,7 +7,7 @@
 
   <input type="text" id="myUrl" name="myUrl" autocomplete="off"><br><br>
 
-<button type="button" id="idButton"" onclick="myFunction()">Show Me!</button>
+<button type="button" id="idButton" >Show Me!</button>
 <br>
 
  
@@ -17,14 +17,18 @@
  				var myUrl = document.getElementById("myUrl").value;
  				myUrl = myUrl.split("?")[0].replace("/amp/","/") + "amp/";
 
-   window.location.href = 
+  var checkBox = document.getElementById("myCheck");
+  if (checkBox.checked == true){
+    window.location.href = 
       "https://royal-bread-003a.cinemageddon2009.workers.dev/" 
       + myUrl;
-   return;
+    return;
+  }
+   
 
    myUrl = "https://api.codetabs.com/v1/proxy?quest=" + myUrl;
    console.log(myUrl);
- ; 
+
 
 
  var x = await fetch(myUrl );
@@ -40,9 +44,7 @@
    
  				
  				};
-function  myFunction() {
-  
-  }
+
 </script>
  
  
