@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html>
-				<head>
-								<meta name="viewport" content="width=device-width, initial-scale=1">
-				</head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
 <body>
 
-  <input type="text" id="myUrl" name="myUrl" autocomplete="off"><br><br>
-  <label for="myCheck">Cloudflare </label> 
-  <input type="checkbox" id="myCheck">
+    <input type="text" id="myUrl" name="myUrl" autocomplete="off"><br><br>
+    <label for="myCheck">Cloudflare </label>
+    <input type="checkbox" id="myCheck">
 
-<button type="button" id="idButton" >Show Me!</button>
-<br>
-
- 
- <script>
- 				document.getElementById("idButton").onclick=async ()=>{ 
- 				
- 				var myUrl = document.getElementById("myUrl").value;
- 				myUrl = myUrl.split("?")[0].replace("/amp/","/") + "amp/";
-
-  var checkBox = document.getElementById("myCheck");
-  if (checkBox.checked == true){
-    window.location.href = 
-      "https://royal-bread-003a.cinemageddon2009.workers.dev/" 
-      + myUrl;
-    return;
-  }
-   
-
-   myUrl = "https://api.codetabs.com/v1/proxy?quest=" + myUrl;
-   console.log(myUrl);
+    <button type="button" id="idButton">Show Me!</button>
+    <br>
 
 
+    <script>
+        document.getElementById("idButton").onclick = async () => {
 
- var x = await fetch(myUrl );
- var html = await x.text(); 
-  //console.log(html);
-  
-  document.write(html);
-  console.log("document written ");
- 
-  
-  console.log('DOM is ready.');
-  document.querySelector("[subscriptions-section='content']").removeAttribute("subscriptions-section");
-   
- 				
- 				};
+            var myUrl = document.getElementById("myUrl").value;
+            myUrl = myUrl.split("?")[0];
+            if (window.location.href.indexOf("repubblica.it/") > -1) {
+                myUrl = myUrl.replace("/amp/", "/") + "amp/";
+            }
 
-</script>
- 
- 
+            var checkBox = document.getElementById("myCheck");
+            if (checkBox.checked == true) {
+                window.location.href =
+                    "https://royal-bread-003a.cinemageddon2009.workers.dev/"
+                    + myUrl;
+                return;
+            }
+
+
+            myUrl = "https://api.codetabs.com/v1/proxy?quest=" + myUrl;
+            console.log(myUrl);
+
+
+
+            var x = await fetch(myUrl);
+            var html = await x.text();
+            //console.log(html);
+
+            document.write(html);
+            console.log("document written ");
+
+
+            console.log('DOM is ready.');
+            document.querySelector("[subscriptions-section='content']").removeAttribute("subscriptions-section");
+
+
+        };
+
+    </script>
+
+
 </body>
+
 </html>
