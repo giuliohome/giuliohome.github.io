@@ -20,7 +20,7 @@
 
             var myUrl = document.getElementById("myUrl").value;
             myUrl = myUrl.split("?")[0];
-            if (window.location.href.indexOf("repubblica.it/") > -1) {
+            if (myUrl.indexOf("repubblica.it/") > -1) {
                 myUrl = myUrl.replace("/amp/", "/") + "amp/";
             }
 
