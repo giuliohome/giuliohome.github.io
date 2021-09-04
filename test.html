@@ -16,14 +16,17 @@
 
 
     <script>
+        var mycharset = "UTF-8"; 
         document.getElementById("idButton").onclick = async () => {
 
             var myUrl = document.getElementById("myUrl").value;
             myUrl = myUrl.split("?")[0];
             if (myUrl.indexOf("repubblica.it/") > -1) {
                 myUrl = myUrl.replace("/amp/", "/") + "amp/";
+            } 
+            if (myUrl.indexOf("corriere.it/") > -1) {
+                mycharset = "windows-1252";
             }
-
             var checkBox = document.getElementById("myCheck");
             if (checkBox.checked == true) {
                 window.location.href =
@@ -39,7 +42,10 @@
 
 
             var x = await fetch(myUrl);
-            var html = await x.text();
+            //var html = await x.text();
+            var mybuffer = await x.arrayBuffer();
+            const decoder = new TextDecoder(mycharset);
+            var html = decoder.decode(mybuffer); 
             //console.log(html);
 
             document.write(html);
