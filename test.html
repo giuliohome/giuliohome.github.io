@@ -21,9 +21,10 @@
 
             var myUrl = document.getElementById("myUrl").value;
             myUrl = myUrl.split("?")[0];
-            if (myUrl.indexOf("repubblica.it/") > -1) {
+            // new way via google
+            /*if (myUrl.indexOf("repubblica.it/") > -1) {
                 myUrl = myUrl.replace("/amp/", "/") + "amp/";
-            } 
+            }*/
             if (myUrl.indexOf("corriere.it/") > -1) {
                 mycharset = "windows-1252";
             }
