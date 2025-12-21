@@ -1,4 +1,4 @@
-# Privacy Policy – Notifiche TTS
+# Privacy Policy – [Notifiche TTS](https://gitlab.com/giuliohome/NotificheTTS/)
 
 Questa applicazione legge le notifiche ricevute sul dispositivo esclusivamente per pronunciarle ad alta voce.
 
